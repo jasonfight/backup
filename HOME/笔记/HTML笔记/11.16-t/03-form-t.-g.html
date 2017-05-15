@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>form表单</title>
+  </head>
+  <body>
+
+    <form action="#" method="get">
+       姓名： <input type="text" size="20"><br><br>
+
+       <!-- readonly属性  , 布尔 Bool属性，
+        bool属性不需要填写属性值，只需填写属性名即可
+      -->
+       只读： <input type="text" value="默认值" readonly>
+       <br><br>
+
+       <!-- maxlength 控制最大字符个数  -->
+       密码： <input type="password" maxlength="6">
+
+       <br><br>
+       <!-- disable 也是bool属性  -->
+       禁用控件： <input type="button" value="我被禁用了" disabled>
+
+       <br><br>
+       课程：
+       <!-- checked 也是bool属性  -->
+       <input type="checkbox" name="h5" checked>h5
+       <input type="checkbox" name="3d">3d
+       <input type="checkbox" name="u">u
+
+
+    </form>
+
+  </body>
+</html>

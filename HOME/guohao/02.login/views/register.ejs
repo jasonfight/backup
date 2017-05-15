@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link href="stylesheets/register-style.css" rel='stylesheet' type='text/css' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+	<style>
+
+		ul {
+			list-style: none;
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<br><br><br>
+		<div class="register">
+
+		<div class="header">
+			<h1 style="color:white;">注册个人信息</h1>
+		</div>
+		<form action="/register" class="form-group" method='post'>
+			<ul class="">
+				<div>
+
+				<div class="col-lg-6">
+
+					<h2>账户信息(必选):</h2>
+					<li>
+						<div style="padding:0px;" class="col-lg-10">
+							账号:<input type="email"  name='account' placeholder="请输入邮箱名" required/>
+						</div>
+						<span class='test'></span>
+						<div class="col-log-2">
+							<button style="margin:0px 0px 0px 6px;" type="button" class='col-log-3 btn btn-danger account_test' name="account_test">账号检测</button>
+						</div>
+					</li>
+					<br><br>
+
+					<script type="text/javascript">
+						$('.account_test').click(function() {
+							console.log('准备账号检测');
+							$.get({
+								url:'/test',
+								data:{account:$('input[name="account"]').val()},
+								success:function(data){
+									if (data =='ok'){
+										$('.test').text('账户可以使用');
+										$('input[type="submit"]').attr('disabled',false)
+									}else{
+										$('.test').text('账户已经存在');
+										$('input[name="account"]').css({border:'1px solid red'});
+										$('input[type="submit"]').attr('disabled',true)
+									}
+								}
+
+							})
+						});
+
+					</script>
+
+          <li>
+            性别:    <input type="radio" name="gender" value="male">男
+                    <input type="radio" name="gender" value="female">女
+					</li>
+					<br><br>
+					<li>
+					  密码:<input type="password" name='password'  id='passwd' class="form-control" placeholder="password" required/>
+
+					</li>
+					<span class='password_test'></span>
+					<br><br>
+					<li>
+						密码确认:<input type="password"  id='passwd_1' class="form-control" placeholder="password" required/>
+					</li>
+				</div>
+				<script type="text/javascript">
+					$('#passwd').blur(function(){
+						var length = $('#passwd').val().length
+							if ( length<8){
+								$('.password_test').text('密码长度不够')
+							}else{
+								$('.password_test').text('')
+							}
+					});
+					$('#passwd_1').blur(function() {
+						var passwd = $('#passwd').val();
+						var passwd_1 = $('#passwd_1').val();
+						var length = $('#passwd').val().length
+						// console.log($(this).val());
+						// console.log($('#passwd').val());
+						// console.log(length);
+
+						if (passwd != passwd_1) {
+							// console.log('heheh');
+							$('.password_test').text('密码不一致')
+						} else {
+							$('.password_test').text('')
+							// console.log('密码确认');
+						}
+					})
+				</script>
+
+				&nbsp;&nbsp;&nbsp;
+				<input type="submit" value="提交信息">
+
+			</ul>
+
+
+		</div>
+		</form>
+	</div>
+
+</body>
+
+</html>

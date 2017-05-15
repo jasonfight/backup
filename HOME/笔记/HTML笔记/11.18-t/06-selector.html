@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>交集选择器</title>
+    <style>
+
+      /*两个条件必须都符合*/
+      /* p元素必须包含p2和p3两个类才可以*/
+      div p.p2.p3 {
+        color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div>
+      <p>第1个</p>
+
+      <!-- class可以有多个值， 其中每个值都以空格作为分隔符  -->
+      <p class="p2 p3">第2个</p>
+      <p class="p2">第3个</p>
+
+      <!-- p元素中不可以嵌套p元素  -->
+      <!-- <p>第3个<p class="p2">p中的p元素</p></p> -->
+    </div>
+
+    <span class="p2">span元素</span>
+
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>后代选择器</title>
+    <style media="screen">
+      /*P元素必须啊包含在div中才可以起作用*/
+      div p {
+        color: red;
+      }
+      div div p{
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">
+      <p>
+        div--->p
+        符合 div--->p 颜色为红色
+      </p>
+    </div>
+    <div class="">
+      <h2>
+        <p>
+          div--->h2--->--->p
+          符合div--->p 颜色为红色
+        </p>
+      </h2>
+    </div>
+    <div class="">
+        <div class="">
+          <p>
+              div--->div--->p
+              符合 div div p  颜色为绿色
+          </p>
+        </div>
+    </div>
+<div class="">
+  <h2>
+  <div class="">
+    <p>
+      div--->h2--->div--->p
+      符合 div--->div--->p 颜色为绿色
+    </p>
+  </div></h2>
+</div>
+
+
+
+  </body>
+</html>

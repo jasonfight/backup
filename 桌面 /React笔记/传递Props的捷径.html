@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>传递Props的捷径</title>
+    <script src="/home/jason/cdn/react.min.js"></script>
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div class="hello">
+      <script type="text/babel">
+        var Div = React.createClass({
+          render:function(){
+            // {...this.props} 为ReactDOM.render 中传递的所有HTML属性,自定义属性不能被传递.
+            // this.props.children  将ReactDOM.render 中的子元素传递过来
+            return (<a {...this.props}>{this.props.children}</a>);
+          }
+        });
+
+        ReactDOM.render(
+          <Div href='#'>
+              <h1>hello</h1>
+              <h2>nihao</h2>
+          </Div>,
+          document.querySelector('body')
+        )
+      </script>
+   </div>
+
+  </body>
+</html>

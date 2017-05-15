@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="/home/jason/cdn/react.min.js"></script>
+
+    <!-- <script src="https://cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script> -->
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/babel-core/5.8.5/browser.min.js"></script> -->
+    <script src="/home/jason/cdn/browser.min.js"></script>
+    <script src = "/home/jason/cdn/jquery.js"></script>
+  <title>ajax在React中的应用</title>
+</head>
+<body>
+<script type="text/babel">
+  var Div = React.createClass({
+    getInitialState:function(){
+      return {
+        username:'',
+        lastGistUrl:'',
+        c_time:'',
+        u_time:''
+      }
+    },
+    componentDidMount:function(){
+      $.get(this.props.source,(result)=>{
+        var lastGist = result[0];
+        console.log(result[0]);
+        if (this.isMounted){
+          this.setState({
+          username:lastGist.owner.login,
+          lastGistUrl:lastGist.html_url,
+          c_time:lastGist.created_at,
+          u_time:lastGist.updated_at
+        });
+        }
+      })
+    },
+    render:function(){
+      return <div>
+          {this.state.username} s last gist is
+          <a href={this.state.lastGistUrl}>{this.state.username}</a>
+          <h1>创建时间:{this.state.c_time}</h1>
+          <h1>更新时间:{this.state.u_time}</h1>
+      </div>
+    }
+  })
+  ReactDOM.render(
+    <Div source="https://api.github.com/users/octocat/gists"></Div>,document.body
+  )
+
+</script>
+</body>
+</html>

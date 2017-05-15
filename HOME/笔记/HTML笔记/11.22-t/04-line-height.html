@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>行高的设置</title>
+    <style>
+      .f {
+        font-size: 30px;
+        /*line-height: 25px;*/
+        /*line-height: 120%;*/
+        /*line-height:  1.2em;*/
+
+        /*设置的行高因子，会被子元素继承*/
+        line-height: 1.2;
+      }
+
+      .f p {
+        font-size: 60px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class='f'>
+      div元素
+      <p>
+        div中的p元素<br>
+        div中的p元素<br>
+        div中的p元素<br>
+      </p>
+    </div>
+  </body>
+</html>

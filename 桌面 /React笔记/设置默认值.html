@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>设置默认值</title>
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div class="hello">
+      <script type="text/babel">
+          var data = 'hahaha';
+          var Mytitle = React.createClass({
+              getDefaultProps:function(){
+                return {
+                  title:'h5'
+                };
+              },
+              render:function(){
+                return <h1>{this.props.title}</h1>
+              }
+          });
+
+            ReactDOM.render(
+              <Mytitle  />,
+              document.querySelector('.hello')
+            )
+
+
+      </script>
+   </div>
+
+  </body>
+</html>

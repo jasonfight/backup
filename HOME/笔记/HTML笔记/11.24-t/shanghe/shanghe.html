@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>爱尚手机</title>
+<style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    color:red;
+  }
+  .bg{
+    width:1280px;
+    margin: 0 auto;
+  }
+  .head {
+    height: 115px;
+    background:url(head_bg.png) repeat-x;
+
+  }
+  .head .logo {
+    margin-left:100px;
+    margin-top: 30px;
+  }
+  .head .button {
+    width: 30px;
+    height:30px;
+    float: right;
+    margin-right: 200px;
+    margin-top: 30px;
+    background: url(./button.png)
+
+  }
+  .head .text {
+    width: 150px;
+    height:30px;
+    float: right;
+    margin-top: 30px;
+    background: url(./text.png)
+  }
+
+
+  .head .guid {
+
+  }
+  .head .guid ul {
+      margin-top: 20px;
+  }
+  .head .guid li {
+    width: 210px;
+    height: 20px;
+    text-align: center;
+    float: left;
+  }
+  .head .guid li a:hover {
+
+    color: yellow;
+  }
+  .body {
+    margin: 0 auto;
+      width: 980px;
+  }
+  .body .middle {
+    height: 30px;
+    line-height: 30px;
+    border-top: 1px solid gray;
+    border-bottom:  1px solid gray;
+    font-size: 14px;
+  }
+    .body .middle .share {
+      float: right;
+      height: 25px;
+      margin-right: 30px;
+    }
+      .body .news {
+
+      }
+    .body .news .news1 {
+      margin: 5px;
+      margin-top: 20px;
+      width: 310px;
+      height: 310px;
+      border: 1px solid gray;
+      float: left;
+    }
+    .body .news .news1 .p {
+        font:bold 20px "宋体";
+        color: rgb(69, 242, 47);
+        margin: 10px;
+    }
+    .body .news .news2 {
+      margin: 5px;
+      margin-top: 20px;
+      width: 310px;
+      height: 310px;
+      border: 1px solid gray;
+      float: left;
+    }
+
+    .news2-1 {
+      font:bold 20px "宋体";
+      color: rgb(69, 242, 47);
+      margin: 10px;
+      float: left;
+    }
+    .news2-2 {
+      font: 20px "宋体";
+      color: gray;
+      margin: 15px;
+      float: right;
+    }
+    .news2-3  li {
+      height: 14px;
+      border-bottom: 1px dashed gray;
+      font: 12px "宋体";
+      color: gray;
+      padding: 10px;
+    }
+
+    .body .news .news3 {
+      margin: 5px;
+      margin-top: 20px;
+      width: 310px;
+      height: 310px;
+      border: 1px solid gray;
+      float: left;
+      padding-left: 10px;
+    }
+    .news3-1 {
+      font:bold 20px "宋体";
+      color: rgb(69, 242, 47);
+      margin: 10px;
+    }
+    .news3-2 li {
+      height: 35px;
+      line-height: 35px;
+      background: url(./news3.png) no-repeat;
+      background-position: left center;
+      /*padding-left: 15px;*/
+      text-indent: 1em;
+    }
+    .news3-3 {
+
+      padding-left: 35px
+    }
+    .foot-bg {
+      height:180px;
+      background-color:#313131;
+      border-bottom: 1px solid  red;
+    }
+    .foot {
+      margin: 0 auto;
+      width: 980px;
+      height: 180px;
+      /*float: left;*/
+    }
+    .foot1 {
+      width: 120px;
+      height:180px;
+      /*border: 1px dashed  white;*/
+      float: left;
+    }
+    .foot1 .foot1-h {
+      color:white;
+      font:bold 20px "宋体":
+
+
+    }
+    .foot1 .foot1-b {
+      color: gray;
+    }
+      .bottom {
+        padding-top: 20px;
+        height:100px;
+        background-color:#313131;
+        border-top: 1px dashed  gray;
+        color:gray;
+        text-align: center;
+      }
+</style>
+  </head>
+  <body>
+  <div class="bg">
+        <div class="head">
+          <img  class="logo" src="./logo.png" alt="" />
+          <input class="button" type="button" name="name" value="">
+          <input  class="text"type="text" name="name" value="">
+          <div class="guid">
+            <ul class="li" >
+                <li><a href="#">首页</a></li>
+                <li><a href="#">智能手机</a></li>
+                <li><a href="#">平板电脑</a></li>
+                <li><a href="#">配件</a></li>
+                <li><a href="#">服务支持</a></li>
+                <li><a href="#">关于尚合</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="body">
+          <img src="./banner.png" alt="" />
+          <img style="margin-left:450px;"src="./point.png" alt="" />
+          <div class="middle">
+            <a href="#"><strong>最新公告:</strong>尚合Aone智能手机入网证已经获工信部审批下发.尚合官方</a>
+            <img class="share" src="./share.png" alt="" />
+        </div>
+          <div class="news">
+          <div class="news1">
+            <p class="p">              新品发布            </p>
+            <img style="padding-left:73px;"src="./news1_image.png" alt="" />
+          </div>
+          <div class="news2">
+            <div class="news2-1">
+              新闻中心
+            </div>
+            <div class="news2-2">
+                <a href="#">更多</a>
+            </div>
+            <div style="clear:both;">
+
+            </div>
+            <div >
+              <ul class="news2-3">
+                <li><a style="color:red;font:bold 20px '宋体';"href="#">致歉公告</a></li>
+                <li><a href="#">首批尚合Aonet已全部售罄</a></li>
+                <li><a href="#">【媒体报导】国产高性价比 尚合Aone他四核手机评测</a></li>
+                <li><a href="#">我司产品已通过了国家强制性产品3C认证</a></li>
+                <li><a href="#">尚合Aonet智能手机入网证已经获工信部门审批下发</a></li>
+                <li><a href="#">我司通过ISO9001:2008国际质量管理体系认证</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="news3">
+            <div class="news3-1">
+              技术支持
+            </div>
+            <div class="news3-2">
+                <ul>
+                  <li><a href="#">售后服务</a></li>
+                  <li><a href="#">技术支持</a></li>
+                  <li><a href="#">联保网点</a></li>
+                  <li><a href="#">常见问题FAQ?</a></li>
+                </ul>
+            </div>
+            <div class="news3-3">
+              深圳市汇聚众和科技发展有限公司
+            </div>
+            <div class="news3-3">
+              服务热线:400-633-7922
+            </div>
+          </div>
+          <div style="clear:both;"> </div>
+        </div>
+      </div>
+
+        <div class="foot-bg">
+
+        <div class="foot">
+
+          <div class="foot1">
+              <p class="foot1-h">尚合首页 </p>
+              <ul >
+                  <li ><a  class="foot1-b" href="#">返回首页</a></li>
+
+              </ul>
+          </div>
+          <div class="foot1">
+              <p class="foot1-h"> 智能手机</p>
+              <ul >
+                  <li ><a  class="foot1-b" href="#">Aone-7</a></li>
+                  <li ><a  class="foot1-b" href="#">Aone</a></li>
+              </ul>
+          </div>
+          <div class="foot1">
+              <p class="foot1-h"> 平板电脑</p>
+              <ul >
+                  <li ><a  class="foot1-b" href="#">尚PAD S200</a></li>
+                  <li ><a  class="foot1-b" href="#">尚PAD S100</a></li>
+                  <li ><a  class="foot1-b" href="#">尚PAD SH-Q7</a></li>
+                  <li ><a  class="foot1-b" href="#">尚PAD SH-Q5</a></li>
+
+              </ul>
+          </div>
+          <div class="foot1">
+              <p class="foot1-h"> 配件中心</p>
+              <ul >
+                <li ><a  class="foot1-b" href="#">Aone 智能手机</a></li>
+              </ul>
+          </div>
+          <div class="foot1">
+              <p class="foot1-h">服务与支持</p>
+              <ul >
+                  <li ><a  class="foot1-b" href="#">售后服务</a></li>
+                  <li ><a  class="foot1-b" href="#">投诉与建议</a></li>
+                  <li ><a  class="foot1-b" href="#">联保网点</a></li>
+                  <li ><a  class="foot1-b" href="#">常见问题FAQ?</a></li>
+                  <li ><a  class="foot1-b" href="#">订单查询</a></li>
+                  <li ><a  class="foot1-b" href="#">下载专区</a></li>
+              </ul>
+          </div>
+          <div class="foot1">
+              <p class="foot1-h"> 关于我们</p>
+              <ul >
+                  <li ><a  class="foot1-b" href="#">公司介绍</a></li>
+                  <li ><a  class="foot1-b" href="#">企业文化</a></li>
+                  <li ><a  class="foot1-b" href="#">工作机会</a></li>
+                  <li ><a  class="foot1-b" href="#">法律声明</a></li>
+                  <li ><a  class="foot1-b" href="#">联系我们</a></li>
+              </ul>
+          </div>
+          <div class="foot1">
+              <p class="foot1-h"> 新闻中心</p>
+              <ul >
+                  <li ><a  class="foot1-b" href="#">公司新闻</a></li>
+                  <li ><a  class="foot1-b" href="#">媒体报导</a></li>
+                  <li ><a  class="foot1-b" href="#">行业动态会</a></li>
+              </ul>
+          </div>
+          <div class="foot1">
+              <p class="foot1-h"> 常用链接</p>
+              <ul >
+                  <li ><a  class="foot1-b" href="#">百度</a></li>
+                  <li ><a  class="foot1-b" href="#">Google</a></li>
+                  <li ><a  class="foot1-b" href="#">新浪微博</a></li>
+              </ul>
+          </div>
+
+
+        </div>
+
+        <div class="bottom">
+          2011-2012版权所有 深圳市汇聚中和科技发展有限公司(品牌:尚合-SAMHAVE) 服务热线:400-633-7922
+          <br>
+          经营许可证编号:粤ICP备11077821号-1
+        </div>
+
+
+
+
+    </div>
+  </div>
+
+
+  </body>
+</html>

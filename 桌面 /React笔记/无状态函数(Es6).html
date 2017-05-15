@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>无状态函数</title>
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div class="hello">
+      <script type="text/babel">
+      //形态一:
+          // function Div (props){
+          //   return <div> Hello {props.name}</div>
+          // }
+
+      //形态二:
+      //箭头函数:当箭头右面为圆括号时,里面的内容为函数返回值,如果为花括号,里面的内容为函数具体内容.
+          const Div = (props) => (<h1>Hello {props.name}</h1>)
+          ReactDOM.render(
+            <Div name="React2"></Div>,
+            document.body
+          )
+      </script>
+   </div>
+
+  </body>
+</html>

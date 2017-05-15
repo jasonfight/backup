@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>块，行元素</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .f {
+        width: 300px;
+        height: 200px;
+        background: red;
+
+        /*变为行内块元素，具有了行元素的特点*/
+        /*display: inline-block;*/
+      }
+
+      .line {
+        width: 300px;
+        height: 200px;
+        background: yellow;
+
+        /*可将行内元素，变为块元素*/
+        display: block;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="f"></div>
+
+    <a class="line" href="#">a标签</a>
+
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>form 表单基本应用1</title>
+  </head>
+  <body>
+      form（表单）的基本应用：
+      <br><br><br>
+      <!-- action 调用后台程序的程序路径，目前是用#代表不调用
+       method 提交信息的方式，get为明文体检  post 为暗文提交 -->
+    <form action="#" method="get">
+
+      <!-- input标签： -->
+      <!-- type属性： -->
+      <!-- text参数：表示普通文本框，name为后端程序调用时寻找的目标名，value为具体值，用于后端程序调用。 -->
+    账号：<input type="text" name="name" value=""><br>
+    <!-- password参数，密码框 -->
+    密码：<input type="password" name="passwd" value=""><br>
+    <!-- checkbox 复选框 -->
+    课程：<input type="checkbox" name="checkbox" value="">3D
+        <input type="checkbox" name="checkbox" value="">unity
+        <br><br>
+
+        <!-- radio 单选按钮，两者name参数一致时，按钮才能只选择一个 -->
+        <input type="radio" name="gender" value="1">男
+        <input type="radio" name="gender" value="2">女
+      <!-- submit  登录按钮 -->
+    <input type="submit" name="submit" value="登录">
+    <br><br>
+    <!-- image  使用图片方式登录 -->
+    <input type="image" src="./denglu.png" >
+    <br><br>
+        <!-- file标签，用作上传附件用 -->
+    <input type="file" value="上传文件" name="file"accept="image/*">
+  
+  </form>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+
+
+11.01
+linux基本操作
+
+1.vim的使用
+	vim有三种模式
+	第一种 编辑模式
+		a 进入编辑模式，双击Esc键 退出编辑模式
+
+	第二种 命令行模式
+		yy 复制当前行
+		dd 剪切当前行
+		小写p 粘贴到光标之后
+		大写P 粘贴到光标之前
+		i 在当前字符左边插入
+		I 在当前行行首插入
+		a 在当前字符的右边输入
+		A 在当前行的行尾插入
+
+		H 向左
+		J 向下
+		K 向上
+		L 向右
+	第三种 底行模式
+		：冒号键 进入底行模式
+		q 退出
+		w 保存
+		！强制执行
+=========================================================================
+2016.11.01
+
+基本文件操作
+ls			//列出当前文件夹中的文件
+touch file		//创建一个文件
+cp file file1		//复制 file 为 file1 并保存在当前目录
+cp file /home/jason/file1	//复制 file 到 /home/jason 目录，并保存为file1
+rm file 			//删除文件
+mv file file2		//重命名 file 为 file2
+mv file /home/jason/	//剪切 file 到 /home/jason 目录中
+ls -al			//显示当前文件夹中所有文件的详细信息
+cat file		//将 file 中的内容显示在屏幕中
+
+基本目录操作
+
+mkdir dir			//创建一个名为 dir 的目录
+cp dir dir1 -a			//将 dir 和其中的所有文件 复制到当前文件夹并重命名为 dir1
+cp dir /home/jason/dir2 -a	//将 dir 和其中的所有文件 复制到/home/jason/ 并重命名为 dir2
+rm dir -rf 			//删除文件夹及其子文件
+mv dir dir2			//将 dir 重命名为 dir2
+mv dir /home/jason/		//将dir 文件夹剪切到 /home/jason/ 中
+ls -d dir			// 将 dir 文件的文件名列出来 而不是该文件的内容
+find ./ dir -name file		//查找当前目录下 名为 file的文件
+
+文件的归档和压缩
+
+gzip file 			//将文件file压缩为gz.gz
+bzip2 file 			//将文件file压缩为 file.bz2
+gunzip file.gz 		//将压缩包 file.gz解压为file
+bunzip2 file.bz2 		//将压缩包file.gz解压为file
+tar czf dir.tar.gz dir	//将 dir 文件夹 压缩为 dir.tar.gz
+tar cjf dir.tar.bz2 dir	//将 dir 文件夹 压缩为 dir.tar.bz2
+tar cJf dir.tar.xz dir	//将 dir 文件夹 压缩为 dir.tar.xz
+tar xzf dir.tar.gz		//将dir.tar.gz压缩包解压到当前文件夹
+tar xf dir.tar.xz		//将任意格式的压缩包解压到当前文件夹
+
+通配符
+  *                         //匹配任意字符
+  ?                         //匹配单一字符
+  [0-9]                     //匹配一个0-9的字符，
+  [!0-3]                   //匹配一个非0-3的字符
+  [0-9][0-9]                //  匹配两个0-9的字符
+  {string1,string2...}      //匹配string1,string2...其中的一个字符串
+
+用户和租的概念
+用户的分类：
+超级用户：root，具有最高权限，
+系统用户：System Account，不能登录，用于维护系统运行
+普通用户：lofin Account，登录用户
+
+组的分类：
+主组：honshu默认组，用户的gid所标识的组
+附属组：  用户的附加组
+  /etc/passwd     //用于数据文件，包含用户的相关信息
+  /etc/group      //用于描述组的文件
+  /etc/shadow     //加密的用户密码文件
+创建用户和组
+  adduser          //创建用户
+  useradd -s /bin/bash -m -g jason  newuser1
+  // 创建一个用户， 使用/bin/bash进行解析，创建一个家目录，属于jason组。名为newuser
+  addgroup        //创建组，与groupadd没什么区别
+用户和组的相关命令
+usermod -s /bin/sh user1    //将user1的解释器改为sh
+usermod -G user1 user2      //将user2添加到user1组中
+gpasswd -d user2 user1      //将uer2从user1去除
+passwd user1                //给user1设置或者重新设置密码
+deluser user1 --remove home //删除user1用户，并移除其家目录
+userdel  user1              //删除用户 user1，但是不能删除其家目录
+groupdel  user1             //删除组 user1 也可用delgroup
+
+与系统管理相关的命令
+shutdown -h 1            // 1分钟后关机
+shutdown -r 1            // 1分钟后重启
+df                      //查询系统盘使用情况
+df  -h
+du
+ps pstree top
+kill
+
+
+===========================================================================
+
+
+
+
+
+
+
+
+2016.11.01
+安装程序方法
+sudo dpkg -i {full filename}  //执行程序，i 表示install的简称
+dpkg -s {filename}    	//查询该安装包是否已经安装，文件名用简称就可以
+dpkg -L {filename}	//查询应用程序安装路径，可用来查询执行的代码
+dpkg -r {filename}	//删除安装的
+
+dpkg -P {filename}	//整个卸载安装的文件
+
+在线安装程序方法
+
+sudo apt-get update 			//升级软件包
+sudo apt-get install {filename}		//在线安装软件包
+sudo apt-get remove {filename} 		//卸载软件包
+sudo apt-get purge {filename}		//彻底卸载软件包
+sudo apt-get download {filename}	//仅仅下载软件包
+sudo apt-get sourse {filename}		//下载软件包源文件
+sudo apt-cache policy {filename}	//查看软件包安装信息
+sudo apt-cache show {filename}		//查看软件包的信息无论是否安装）
+
+2016.11.02
+
+服务器
+
+一、定义：文件传输服务器（TFTP）
+
+Trival File Transfer Protocol(TFPT) 简单文件传输协议，TCP /IP 协议协议族中的一个用来在客户机与服务器之间进行简单文件传输的协议，用来进行简单文件的传输。端口号为69。
+IP 地址：一个局域网中的计算机的唯一标识，
+端口号：用来区分不同应用
+
+二、安装步骤：
+
+1.检查TFPT服务器和客户端的安装状态
+	dpkg -s tftpd-hpa	//检查服务器安装状态
+	dpkg -s tftp-hpa	//检查客户端安装状态
+2.在线安装服务器
+	apt-get install tftpd-hpa	//安装服务器
+	apt-get install tftp-hpa	//安装客户端
+
+3.修改TFTP服务器的配置
+先将用户权限更改为 超级管理员权限：
+	su root
+修改TFPT服务器的文件/etc/default/tftpd-hpa
+
+	sudo vi /etc/default/tftpf-hp
+出现下列代码：
+	1 # /etc/default/tftpd-hpa		//
+	2
+	3 TFTP_USERNAME="tftp"			//客户端登录身份为“tftp”
+	4 TFPT_DIRECTORY="var/lib/tftpboot"	//服务器工作目录为 var/lib/tfptboot
+	5 TFTP_ADDRESS="[::]:69"		//服务器端口号
+	6 TFPT_OPTIONS="--secure"		//安全选项
+
+将第6行文件更改为：
+	6 TFPT_OPTIONS="--secure -c -l"		// -c -l 表示 最高权限
+更改 tftpboot 文件夹的读写权限，更改为可读可写可执行
+	chmod 777 tftpboot
+
+重启服务器					//启动、重启及关闭服务器代码见备注1
+	service tftpd-hpa restart
+4上传和下载文件：
+ 在当前文件夹中。找到需要上传的文件，然后进行如下操作：
+	tftp 127.0.0.1		//链接服务器（本机IP为127.0.0.1）查询本机IP 方法见备注2
+	put {待上传文件名}	//上传文件，默认为 /var/lib/tftpboot 文件夹中
+	get {待下载文件名}	//从/var/lib/tftpboot下载文件到当前文件夹
+	quit			//退出
+
+
+	*注1：TFTP服务的启动、重启以及停止
+
+	启动：service tftp-hpa start
+	重启：service tftp-hpa restart
+	停止：service tftp-hpa stop
+
+	×注2：查询IP： ifconfig   或  127.0.0.1 表示本机IP
+	chmod 777 tftpboot       //更改文件权限
+
+	*注3切换到超级用户  su root
+	sudo service tftpd-hpa start               // systemctl  最新命令
+
+
+网络文件系统 NFS
+
+NFS（Network File System）网络文件系统，允许网络中的计算机通过TCP/IP网络共享资源，客户端可以透明的读写位于远端的服务器上的文件。
+
+优点：
+ 节省本地存储空间
+NFS服务器的安装步骤：
+1.检查NFS服务器的安装状态
+
+	dpkg -s nfs-kernel-server
+2.在线安装NFS服务器
+	sudo apt-get install nfs-kernel-server
+
+3.配置文件：
+
+	修改NFS服务器的配置文件 /etc/exports
+	sudo vi /etc/exports
+	然后在底行添加如下代码：
+	/nfs_dir *(rw,sync,no_subtree_check,no_root_squash)
+  //*代表任何主机都可以访问，rw 可读写，服务器与客户端同步，
+  //no_subtree_check 不进行字母里检查，
+  //no_root_squash 使用默认的root用户进行操作 ，
+  //具体参数配置方法 可使用 man exports 进行查询
+	//保存并退出
+4.在根目录下创建一个 nfs_dir的文件夹
+	cd /			//切换到根目录下
+	su root			//权限改为root
+	mkdir nfs_dir		//创建 nfs_dir 文件
+	chmod 777 nfs_dir	//更改权限为用户，组及替他成员均可读写可执行，
+5 启动服务器
+	service nfs-kernel-server start		//启动服务器 重启和停止命令分别为 restart和stop
+6 测试服务器
+	cd nfs_dir			//切换到 nfs_dir 文件夹
+	touch file1 file2 file3		// 创建几个文件
+	cd ..				//返回上级文件夹
+	mount -t nfs 127.0.0.1:/nfs_dir /mnt 		// 将客户端中的mnt文件夹与服务器进行挂载  -t nfs 表示 挂载类型为nfs格式， 127.0.0.1 为服务器IP地址，nfs_dir为服务器中被挂载的文件夹
+	cd mnt 		//切换到mnt文件夹中
+	ls 		//查看本地 mnt文件夹 可看到服务器中 nfs_dir 中的文件
+7 卸载服务器
+   umont /mnt		// umount {本地挂载的文件夹名}
+
+
+2016.11.03
+
+远程安全登录服务器 SSH
+Secure Shell 协议（SSH）为远程登录绘画和其他网络服务提供安全性的协议
+
+
+	ps ajx | gerp ssh	         // | 为管道 grep {文件名} 查询文件名
+	wc  file 	// 输出file文件 行数 单词数 字节数  文件名
+	wc -l file	   //输出file文件的行数
+	cat file  //输出file的内容
+	grep  “关键字” file  //输出匹配行
+	grep -n “关键字” {文件名}	//输出匹配行的内容并带行号
+	grep -R  -n “关键字” {文件名} .	//查找文件夹及子文件夹中所有的带关键字的内容及行号
+	tree {文件夹名}  // 输出该文件夹的包含关系（没有安装的时候要进行安装）
+
+
+
+安装SSH步骤
+1.检查服务器与客户端安装状态
+
+	dpkg -s openssh-sever	//检查服务器安装状态
+	dpkg -s openssh-client 	//检查客户端安装状态
+2.安装服务器与客户端
+	sudo apt-get install openssh-server
+	sudo apt-get install openssh-client
+3.配置服务器
+	/etc/ssh/sshd_config
+	配置服务器为更改相关权限，目前不需要配置
+4.启动服务器
+	service sshd start
+5.链接
+
+   	ssh usr@hostname // 链接到服务器 usr 为服务器用户名 hostname 为主机名
+
+6.关闭服务器
+	service sshd stop
+
+
+
+
+
+×注1  其他命令
+	scp命令：
+	scp {文件名} usr@hostname:/    //将文件传到对方电脑根目录中
+	scp {文件名} teacher@192.168.1.82:/
+	scp -r {目录名} usr@hostname 	//将目录传到对方电脑中
+	scp  usr1@hostname:/{文件名} .		 // 将usr1根目录中的文件传到自己电脑当前文件夹中
+
+	给命令起别名：
+	alias 别名=‘原命令代码’
+
+apache 服务器的安装
+
+1.确认系统
+	本机为ubuntu
+2.安装系统
+	sudo apt-get install apache //傻瓜式安装，目前不用这种方式
+	使用ubuntu自带，自带 Mysql 和php数据库
+		sudo apt-get install tasksel /安装tasksel 任务列表
+		tasksel		//选择 LAMP sever （空格键选择，弹出对话框，输入密码后即可安装，在之后弹出的MySql框中输入MySql密码）
+		ps ajx|grep apache2		//在任务管理器中检查apache是否运行，出现apache2 即为安装完毕
+		vi /etc/apache2/{文件名}	//修改配置文件，目前不需要修改，直接可以使用
+		cd /var/www/html	//切换到www文件夹中，里面有一个名为 htnl的文件夹
+		chmod 777 html 		// 将html文件夹权限改为均可读写、可执行，一般编写的html文件就存放在其中
+		mkdir download 		//创建一个  download的文件夹，用来存放资料，练习用。
+创建快捷方式：
+	ln -s file file_link   //创建file的快捷方式 file_link

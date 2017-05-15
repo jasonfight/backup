@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Avatar</title>
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div class="hello">
+      <script type="text/babel">
+        var Div = React.createClass({
+          render:function(){
+            return (<div>
+              <SonPic username = {this.props.username}></SonPic>
+              <SonLink username = {this.props.username}></SonLink>
+            </div>);
+          }
+        });
+        var SonPic = React.createClass({
+          render:function(){
+            return (<div>
+              <img src={'http://github.com'+ this.props.username + '/picture'} alt=""/>
+              <img src="https://avatars2.githubusercontent.com/u/23477141?v=3&s=460" alt=""/>
+              </div>
+            )
+          }
+        });
+        var SonLink = React.createClass({
+          render:function(){
+            return (
+              <a href={'http://github.com'+ this.props.username}>
+                {this.props.username}
+              </a>
+            );
+          }
+        });
+        ReactDOM.render(
+          <Div username='jasonfight' />,
+          document.querySelector('body')
+        )
+      </script>
+   </div>
+
+  </body>
+</html>

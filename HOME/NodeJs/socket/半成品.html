@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" >
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px;font-size:20px; }
+      #messages li:nth-child(odd) { background: #eee; }
+
+    </style>
+  </head>
+  <body>
+    <div class="contanter">
+      <div id='join'>
+      </div>
+      <div >
+        <h3 class="num"></h3>
+      </div>
+      <ul id='messages'></ul>
+      <form  action="">
+        <input id='m' autocomplete="off">
+        <input id='name' autocomplete="off" value="jason">
+
+        <button > Send</button>
+      </form>
+    </div>
+    <script src='https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js'></script>
+    <script src="https://cdn.bootcss.com/socket.io/1.7.3/socket.io.min.js"></script>
+    <script>
+    $(function(){
+
+
+    var socket = io();
+
+    $('form').submit(function(){
+
+      /*
+        第一参数:'chat' 为事件名称,
+        第二参数:{msg:$('#m').val(),name:$('#name').val()},发送给服务器的内容.
+        第三参数:function(data){},定义的的回调函数,.
+      */
+      socket.emit('chat',{msg:$('#m').val(),name:$('#name').val()},
+          function(data){
+            console.log(data);//ok
+            $('li:last-child').append('<i class = "fa fa-check" aria-hidden="true"> <button class ="chat_to_me">私聊 </button></i>');
+
+            $('.chat_to_me').on('click',function(){
+                console.log(data);
+                console.log('mihao');
+                var info = 'talk to '+data.name;
+
+                $('#m').val(info);
+            })
+
+
+            return false;
+          });
+
+      $('#m').val(''); //触发submit事件后,直接执行该语句.
+      return false;
+    });
+
+    //监听broadcast事件,broadcast事件:给除了自己之外的客户端触发该事件
+    socket.on('broadcast',function(msg){
+      console.log(msg);
+      $('#join').html('<p>welcome!!new friend </p>')
+    });
+
+    //监听socket事件
+    socket.on('socket',function(msg){
+      console.log(msg.num);
+      $('.num').html(msg.num);
+    });
+
+    socket.on('message', function(msg){
+        console.log(msg);
+        $('#messages').append($('<li>').text(msg.name+'  said: '));
+        $('li:last-child').append($('<b>').text(msg.msg));
+        $('li:last-child').attr('user_id',msg.name);
+      });
+      })
+    </script>
+  </body>
+</html>

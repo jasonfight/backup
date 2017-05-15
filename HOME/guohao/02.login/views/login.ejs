@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<link href="stylesheets/register-style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="main container">
+		<div class="col-lg-3"></div>
+			<form action="/login" class="col-lg-6 ma" method='post'>
+				<h1 class="header"><strong>登 录</strong></h1>
+				<hr />
+				<br>
+			    <% if (message) { %>
+			      <h6><%= message %></h6>
+			      <% } %>
+				<ul class="">
+					<li>
+						账号:<input type="text" class="form-control" name='account'  placeholder="Username" required/>
+					</li>
+					<br>
+					<li>
+						 密码:<input type="password"  class="form-control" id='passwd' name='password' name='password'  placeholder="password" required/>
+					</li>
+					<br>
+					<input class='btn btn-info'  type="submit" value="登录">&nbsp;&nbsp;
+          <a type="button" href='/register'  class="btn btn-info">注册</a>
+				</ul>
+			</form>
+		</div>
+
+</body>
+</html>

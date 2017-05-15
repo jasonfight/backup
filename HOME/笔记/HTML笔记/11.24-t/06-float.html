@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>父元素中的所有子元素浮动</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .f {
+        /*所有子元素都浮动，但是父元素没有设置高度，那么父元素的高度为0；
+         这样会导致父元素后边的标准流元素和已经浮动的子元素重合在一块，导致混乱。
+        */
+        /*background: red;*/
+        /*overflow:hidden;*/
+      }
+
+      .s {
+        width: 300px;
+        height: 100px;
+        border: 1px solid red;
+        float: left;
+          overflow:hidden;
+      }
+      .clear {
+        clear: left;
+      }
+      .clearfix {
+        zoom:1;
+      }
+      .clear::before,
+      .clear::after {
+        content: "";
+        display: block;
+        clear: both;
+        visibility: hidden;
+
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="f">
+      <div class="s"></div>
+      <div class="s"></div>
+      <div class="s"></div>
+      <!-- <div class="clear"> -->
+
+      </div>
+    </div>
+    <p>
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+      可是结果看见四个款上缴国库的广阔的国家的控股基地开个会打开ghh
+    </p>
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>this.props.children</title>
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div class="hello">
+      <script type="text/babel">
+          var NoteList = React.createClass({
+                render:function(){
+                      return(
+                        <ol>
+                               {
+                                 React.Children.map(this.props.children,function(child){
+                                   return <li> {child} </li>
+                                 })
+                               }
+                        </ol>
+                    );
+                }
+            });
+
+            ReactDOM.render(
+              <NoteList>
+                  <span> nihao </span>
+                  <span> hahaha </span>
+              </NoteList>,
+              document.body
+            )
+
+
+      </script>
+   </div>
+
+  </body>
+</html>

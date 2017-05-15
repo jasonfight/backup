@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formtest</title>
+  </head>
+  <body>
+    <h1>Form test1</h1>
+    <form class="" action="" method="post">
+      {% csrf_token %}
+      {%  for field in form %}
+        <div class="">
+          {{field.label}}:{{field}}
+          {{field.errors}}
+        </div>
+      {% endfor %}
+      <div class="">
+        <input type="submit" name="submit" value="留言"> <br>
+      </div>
+
+    </form>
+  </body>
+</html>

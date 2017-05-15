@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>select</title>
+  </head>
+  <body>
+
+
+    <form action="#" method="get">
+      <select name="gender">
+        <option value="1">男</option>
+
+        <!-- selected属于bool属性  -->
+        <option value="2" selected>女</option>
+      </select>
+
+      <!-- size  multiple  -->
+      <!-- 如果option没有指定value属性，那么提交的数据就是option的内容；否则，提交的是value值  -->
+      <select name="class" size="1" multiple>
+        <option value="1">one</option>
+        <option value="2" selected>two</option>
+        <option value="3">three</option>
+        <option value="4" selected>four</option>
+      </select>
+
+      <input type="submit">
+    </form>
+
+  </body>
+</html>

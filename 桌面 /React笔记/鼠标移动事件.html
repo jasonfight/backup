@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>鼠标移动</title>
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div class="hello">
+      <script type="text/babel">
+        var Div = React.createClass({
+          getInitialState:function(){
+            return {x:0,
+                    y:0
+              };
+          },
+          handleChange:function(event){
+            this.setState({x:event.clientX,
+                            y:event.clientY
+                          });
+          },
+          render:function(){
+            var x=this.state.x;
+            var y = this.state.y;
+            return <div style={{
+              width:'1000px',
+              height:'1000px',
+              background:'gray',
+              margin:'0px 0px'
+            }} onMouseMove={this.handleChange}>
+                <p>{x}</p>
+                <p>{y}</p>
+            </div>
+          }
+        });
+        ReactDOM.render(
+          <Div />,
+          document.querySelector('body')
+        )
+      </script>
+   </div>
+
+  </body>
+</html>

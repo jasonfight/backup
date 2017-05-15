@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>后代选择器</title>
+    <style>
+
+       /* p元素必须包含在div中才可以*/
+       div p {
+         color: red;
+       }
+
+       div div p {
+         color: green;
+       }
+    </style>
+  </head>
+  <body>
+
+    <p>p元素</p>
+
+    <div>
+      div 元素
+      <p>div中的p元素</p>
+    </div>
+
+    <div>
+      <div>
+        <div>
+          <p> div--->div--->div--->p 元素</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3>
+        h3元素
+        <p>  h3---> p 元素</p>
+      </h3>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>h标签的继承问题</title>
+    <style>
+      .f {
+        font-size: 48px;
+      }
+
+      .f span {
+        font-size: 96px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class='f'>
+      <p>div中的p</p>
+
+      <!-- h元素的字体大小会受祖先元素的影响，但是字体大小是成比例的放大或者缩小  -->
+      <h1>这是h1元素</h1>
+      <span><strong>div中的span</strong></span>
+    </div>
+
+
+  </body>
+</html>

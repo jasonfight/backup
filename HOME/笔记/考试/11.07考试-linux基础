@@ -1,0 +1,176 @@
+Linux基础提升考试题
+22. Ubuntu中的软件包的格式（A　）
+
+A.  Deb   B. Exe   C. Rpm   D.其他
+
+23. Ubuntu 中进行本地软件包管理的命令（A ）
+
+A. dpkg   B. apt   C.rpm    D. yum
+
+24. 哪个命令用于本地软件包的安装（B ）
+
+A. dpkg  -c     B. dpkg  -i    C. dpkg  -l     D. dpkg  - x
+
+25. 哪个命令用于本地软件包的卸载（ A）
+
+A. dpkg  -r     B. dpkg  -i    C. dpkg  -l     D. dpkg  - x
+
+26. 哪个命令用于查看软件包的安装状态（ D）
+
+A. dpkg  -c     B. dpkg  -i    C. dpkg  -l     D. dpkg  -s
+
+27. 哪个命令用于查看软件包的安装路径（C ）
+
+A. dpkg  -c     B. dpkg  -i    C. dpkg  -L     D. dpkg  - x
+
+28. 用于更新软件源的命令是哪个（D）
+
+A. apt-get  ugrade  B. apt install  C. apt-get remove  D. apt-get update
+
+29. 对于软件包wps-office_10.1.0.5672-a21_amd64.deb，描述错误的是（D　）
+
+A. wps-office 是deb 软件包的名称
+B. 10.1.0.5672-a21 是软件包的版本
+C. amd64是 软件包的支持的体系架构
+D. 可以使用dpkg -i wps-office进行安装
+
+30. 在ubuntu中软件包的镜像源配置文件是哪个？（　A）
+
+A. /etc/apt/sources.list
+B. /var/cache/apt/archives
+C. /var/lib/apt/lists/
+D. /var/lib/apt/cdroms.list
+
+31. 安装软件包时哪个命令可以在线修复依赖关系（B　）
+
+A. apt-get  reinstall
+B. apt-get  install -f
+C. apt-cache  show
+D. Apt-cache  policy
+
+32. 如何直接下载二进制软件包（B　）
+
+A. apt-get  source
+B. apt-get  download
+C. apt-get  autoremove
+D. apt-get  autoclean
+
+33. 下列那个命令可以查看软件包的详细信息（C　）
+
+A. apt-get    install
+B. apt-cache  policy
+C. apt-cache  show
+D. apt-cache  search
+
+34. 常见的Linux发行版本有很多，下面不是Linux发行版本的是(C )。
+
+A. Red Hat Linux  
+B. Ubuntu Linux  
+C. X Window  
+D. SuSE Linux
+
+35. 下面不是对Linux操作系统特点描述的是(B )。
+
+A. 良好的可移植性  
+B. 单用户  
+C. 多用户  
+D. 多任务
+
+36. 查看创建目录命令mkdir的帮助文档，可以使用命令( D)。
+
+A. mkdir  –h  
+B. help  mkdir  
+C. mkdir  -p  
+D. man  mkdir
+
+37. 在使用mkdir命令创建新的目录时，在其父目录不存在时先创建父目录的选项（D ）。
+
+A.-m                B.-d                C.-f                        D.-p
+
+38. 任何时候用户需要回到用户主目录时可以使用命令 ( A) 。
+
+A. cd               B. pwd              C. path                     D. cd .
+
+39. 将当前目录下的文件shell.sh移动到目录/home/linux下的命令为( ) 。
+
+A. cp  shell.sh  /home/linux                 
+B. mv  shell.sh  /home/linux
+C. ls  shell.sh  / home/linux/she   ll.sh   
+D. mv /root/shell.sh  /home/linux/shell.sh
+
+40. 下面(C )命令不能用来显示文件的内容。
+
+A. more  B. less  C. find  D. cat
+
+41. /etc/shadow文件中存放（B ）。
+
+A.用户账号基本信息  B.用户口令的加密信息    C.用户组信息   D.文件系统信息
+
+42. LINUX所有服务的启动脚本都存放在（A ）目录中。
+
+A./etc/rc.d/init.d          
+B./etc/init.d           
+C./etc/rc.d/rc          
+D./etc/rc.d
+
+43. 假设目录中存在若干文件file_num.txt（num表示文件编号，1~10），使用以下( C)通配符可以挑选出其中的编号为1、3、5的文件。
+
+A. file_*.txt  B. flie_?.txt  C. file_[135].txt  D. file_[^135].txt
+
+44. 文件权限 r-x -wx r--对应的八进制表示形式为( D)
+
+A.  0536      B.  0654      C.  0656    D.  0534
+
+45. 若要将当前目录中的myfile.txt文件压缩成myfile.txt.tar.gz,则实现的命令为（ C）。
+
+A. tar  -cvf  myfile.txt   myfile.txt.tar.gz       
+B. tar -zcvf  myfile.txt   myfile.txt.tar.gz
+C. tar  -zcvf  myfile.txt.tar.gz  myfile.txt       
+D. tar -cvf   myfile.txt.tar.gz   myfile.txt
+
+46. 若要将当前目录中文件myfile.txt.tar.bz2解压,则实现的命令为（B）。
+
+A.tar  -cvf  myfile.txt   myfile.txt.tar.bz2    
+B.tar -xvf     myfile.txt.tar.bz2
+C.tar  -zvf  myfile.txt.tar.bz2     
+D. bunzip2   myfile.txt.tar.bz2
+
+47. 删除文件命令为(D )
+
+A.mkdir                B.move              C.mv            D.rm
+
+48. 假设文件fileA的符号链接为fileB，那么删除fileA后，下面的描述正确的是（ D）。
+
+A.fileB也随之被删除                 
+B.因为fileB未被删除，所以fileA会被系统自动重新建立
+C.fileB会随fileA的删除而被系统自动删除
+D.fileB仍存在，但是属于无效文件
+
+49. 下面不是对Linux操作系统特点描述的是( B)。
+
+A. 良好的可移植性  B. 单用户  C. 多用户  D. 多任务
+
+50. 在给定文件中查找与设定条件相符字符串的命令为（ A）。
+
+A.grep              B.gzip              C.find              D.sort
+
+二、
+1.利用所学命令实现如下功能：在终端上输出 /etc/passwd 文件中你的登陆用户名的用户id和组id
+
+提示：需要用到cut 命令，自行查询man手册 举例：用户名为linux。 linux:x:1000:1000:linux,,,:/home/linux:/bin/bash 列出1000:1000
+
+答案：cat  "jason" /etc/passwd|cut -d ":" -f 3,4
+
+2. 通过man手册查询find命令的用法，然后在整个系统根目录中查找 apache2.conf文件
+	find / -name apache2.conf
+
+3. 利用html中a标签实现简单的锚点操作
+
+4. 统计 /etc目录(包括所有的子目录)中文件夹的个数，以及普通文件的个数
+	find /etc -type f | wc -l
+	find /etc -type d | wc -l
+
+5. 输出用户主目录中(包括所有的子目录)每个文件占用的磁盘空间大小(使用合适的单位)
+	find /home/jason | du -h -a
+	
+6. 将你的填写答案的文本压缩为xz格式（要求压缩包的名称为你姓名的小写全拼音），并使用scp拷贝到 teacher@192.168.1.98 的用户主目录中

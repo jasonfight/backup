@@ -1,0 +1,265 @@
+
+一.django 的安装:
+解压之后,运行  sudo python setup.py install进行安装
+安装结束后: 进入ipython交互式界面,引入django后(import django),shiyong  django.VERSION 命令 来验证安装是否完好
+
+二.创建工程
+创建工程:
+	django-admin startproject [工程名称]   //在创建时,创建工程的路径不能有中文
+
+    check		检查django项目完整性
+    compilemessages	编译语言文件
+    createcachetable	在数据库中创建缓存表
+    dbshell		进入djangodbshell
+    diffsettings	查看自己的配置和django默认配置的不同之处
+    dumpdata		导出数据
+    flush		清空数据库
+    inspectdb		将数据库导出为模型文件
+    loaddata		导入数据
+    makemessages	创建语言文件
+    makemigrations	生成数据库同步脚本
+    migrate		同步数据库
+    runserver		运行开发服务器
+    sendtestemail	发送测试邮件
+    shell		进入djangoshell
+    showmigrations	查看生成的数据库同步脚本
+    sqlflush		查看生成清空数据库的脚本
+    sqlmigrate		查看数据库同步的sql语句
+    sqlsequencereset	
+    squashmigrations	数据库迁移
+    startapp		创建一个app
+    startproject	创建一个项目
+    test		
+    testserver
+
+manage.py 子命令：（带#号部分与django-admin相同）
+    changepassword  修改密码
+    createsuperuser  创建超级管理员
+    # check
+    # compilemessages
+    # createcachetable
+    # dbshell
+    # diffsettings
+    # dumpdata
+    # flush
+    # inspectdb
+    # loaddata
+    # makemessages
+    # makemigrations
+    # migrate
+    # sendtestemail
+    # shell
+    # showmigrations
+    # sqlflush
+    # sqlmigrate
+    # sqlsequencereset
+    # squashmigrations
+    # startapp
+    # startproject
+    # test
+    # testserver
+    # runserver
+    clearsessions 清除session
+    collectstatic 静态文件复制
+    findstatic 静态文件查找
+
+查看django-admin的命令: django-admin help,列出所有命令列表
+查看具体属性的使用方法: django-admin help functionname
+查看manage.py所有命令: ./manage.py help,列出manage的命令的列表
+
+booksite中的文件:
+
+settings.py  	项目的初始化配置文件
+urls.py   	url查找的根文件,url(统一资源定位符,用来查找网络资源,通过settings.py的ROOT_URLCONF来设置
+__init__.py	包中的文件,不用搭理
+wsgi.py		一般不用,不用搭理
+settings.pyc	字节码文件,不用搭理
+__init__.pyc	字节码文件,不用搭理
+
+在创建工程过程中,根目录为booksite,如果要引入manage.py,则直接引入就可以
+.
+└── booksite
+    ├── booksite
+    │   ├── __init__.py
+    │   ├── __init__.pyc
+    │   ├── settings.py
+    │   ├── settings.pyc
+    │   ├── urls.py
+    │   └── wsgi.py
+    └── manage.py
+
+./manage.py runserver 启动测试服务器, runserver 后可加端口号 默认为8000,只能本机来访问
+./manage.py runserver 0.0.0.0:8888   可以通过外部浏览器来访问
+运行完毕后,当前文件夹会产生一个db.sqlite3 的数据库文件,不用搭理
+
+settings.py:
+见settings.py中的笔记
+
+urls.py:
+先创建views.py,等待urls.py引用
+在urls中,引入views.py中的hello函数
+将hello函数添加到urlpatterns列表中,通过启动服务器后,在浏览器中,
+通过192.168.1.105:8888\hello\(192.168.1.105是服务器ip,8888是端口号)
+就能访问,然后执行hello函数,将执行内容,返回到浏览器中.
+
+第四章:模板:
+模板:向前端呈现的内容
+模板需要放在固定的位置,
+
+创建应用:
+./manage.py startapp myapp
+
+自定义过滤器:
+1.先使用./manage.py startapp myapp创建应用 myapp,
+然后在myapp 文件夹中创建 templatetags(固定名称,不能改变) 
+
+2.在templatetags文件夹中,创建 __init__.py(空文件即可,名字固定)和poll_extra.py(名字随意)
+
+3.在poll_extra.py 中,写入:
+
+from django import template
+
+register = template.Library()
+@register.filter(name = 'cut')		#cut,名称为自定义的修饰器名称
+def cut(value,arg):
+	return value.replace(arg,'##')	#自定义的修饰器操作
+
+
+4.在setting.py中的 INSTALLED_APPS 中,添加先前创建的 myapp 文件夹
+
+5.在views.py中的视图函数中添加相应的操作,然后通过urls.py进行捕捉即可
+
+
+
+传参:
+1 位置传参,在urls.py中,通过()来标识参数的位置,
+2 字典传参,从urls.py中,通过{} 可以将字典中的值传递给视图函数
+使用正则表达式 可以实现位置传参时固定参数的名称
+
+
+views.py
+
+
+
+#1   #t = loader.get_template('template1.html')
+     #html = t.render({'list':l,'dict':d,'class':c,'value':1,'message':message})
+     #return HttpResponse(html)
+
+#2   #return render_to_response('template1.html',{'list':l,'dict':d,'class':c,'value':1,'message':message})
+#3   #return render_to_response('template1.html',locals())
+#4   #return render(request,'template1.html',locals())
+#5   #return render(request,'template1.html',{'list':l,'dict':d,'class':c,'value':1,'message':message})
+
+
+myapp
+
+admin  数据后台管理文件
+app  应用管理文件
+
+migrations 存放模型操作日志的文件夹
+
+moldels 模型文件
+
+tests 测试文件
+
+views.py 应用的视图文件(习惯在每个应用里添加,而不是在配置文件夹(创建的工程的文件夹)中添加)
+
+
+服务器:
+1.先在mysql中创建服务器
+2.在settings.py中的 DATABASES中的default,修改为:
+
+'ENGINE': 'django.db.backends.mysql',
+'NAME': 'Bookdb',
+
+然后添加以下内容:
+'USER':'root',  	(数据库用户名)
+"PASSWORD":'123',	(数据库密码)
+'HOST':'',		(主机ip,服务器为本机,则不需要填写,为空就好)
+'PORT':'',		(服务器端口号)
+如果有多个数据库,可以添加以下代码:
+    'db1': {
+        'ENGINE': 'django.db.backends.mysql',   #修改引擎
+        'NAME': 'Bookdb',                       #修改数据库名称
+        'USER':'root',                          #数据库用户民
+        "PASSWORD":'123',                       # NOTE:   数据库密码
+        'HOST':'',                          # NOTE: 主机IP
+        'PORT':'',  # NOTE: 主机端口号
+然后使用 DATABASE_APPS_MAPPING = {'db1'}        (待验证,不确定语法正确性)
+
+
+makemigrations  生成日志文件
+
+migrate   同步数据库
+
+创建数据列表:
+1.在model.py中,将各个列表的内容,写为类
+2. 执行  ./manage.py makemigrations 和  ./manage.py migrate 生成数据列表
+需要更改数据库时,上面的步骤重新执行一遍,不能改变步骤顺序
+
+如果需要返回修改前的状态,可以使用 ./manage.py migrate  myapp '0001' ,来返回.
+其中 myapp为应用文件夹  '0001' 为前一个状态的数据库的编号,这两个需要根据实际情况来填写
+
+manage命令:
+1.生成model文件: 		./manage.py inspectdb > test (test为导出的model文件.可以自行命名)
+2 显示执行的sql语句 	    	./manage.py sqlmagrite myapp '0001'
+3.进入当前项目换将的ipython    	./manage.py shell
+4 清除数据库数据                              flush
+5.进入当前项目的mysql:			    dbshell
+可以使用 help 来查询这些命令
+
+给数据库填写数据:
+在应用文件夹里 新建  urls.py  和 templates(模板)文件夹
+在模板文件夹里,新建模板文件
+
+填写urls.py中的内容(仿照根目录中的urls.py)(from django.conf.urls import * )
+
+from django.conf.urls import *
+from myapp.views import *
+
+urlpatterns = patterns('',
+(r'^models/$',model_fun)
+
+
+在views.py中,仿照根目录下的 views.py 来填写
+
+from django.shortcuts import rander,render_to_response
+
+
+....
+
+然后,将根目录中的urls.py 设置成跳转到当前的urls文件:
+在根目录中的urls.py 中 添加  (r'^',include('myapp.urls')) (需要在根urls.py的 django.conf.urls中引入include)
+
+urlpatterns += patterns('',
+('^app/',include('myapp.urls')),
+)
+
+数据操作:
+增:
+首先,在views中引入 models:
+from myapp.models import * (model为创建的html模板名称)
+
+删:
+改:
+查:
+
+
+admin:  数据库后台管理
+
+1.创建超级用户:
+	./manage.py createsuperuser
+将 models中的类注册到admin.py中:
+ 先在admin.py中引入 models模块
+ 然后注册:
+    admin.site.register(类名)
+
+可以在models.py在进行相应操作
+
+
+
+
+
+
+
+

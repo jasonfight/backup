@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CSS相对定位</title>
+    <meta charset="utf-8"name="name" content="content">
+    <style type="text/css">
+        #father
+        {
+            margin-top:30px;
+            margin-left:30px;
+            border:1px solid silver;
+            background-color: #B7F1FF;
+        }
+        #father div
+        {
+            width:100px;
+            height:60px;
+            margin:10px;
+            border:1px solid silver;
+            background-color:#FA16C9;
+        }
+        #son2
+        {
+            /*这里设置son2的定位方式*/
+            position: relative;
+            /*top: 50px;*/
+            left: 1820px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="father">
+        <div >第1个无定位的div元素</div>
+        <div id="son2">相对定位的div元素</div>
+        <div >第2个无定位的div元素</div>
+    </div>
+</body>
+</html>

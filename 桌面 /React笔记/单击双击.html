@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <!-- <script src="https://cdn.bootcss.com/react/15.5.4/react.min.js"></script> -->
+    <!-- <script src="../../cdn/react.min.js"></script> -->
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <!-- <script src="https://cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script> -->
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/babel-core/5.8.5/browser.min.js"></script> -->
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div id="hello">
+      <script type="text/babel">
+
+
+
+
+        // 单击一次加一,双击一次加一.
+        var HelloMessage = React.createClass({
+          getInitialState:function(){
+            return {value:0};
+          },
+          handleChange:function(event){
+            this.setState({value:++this.state.value})
+            console.log(this.state.value);
+          },
+          handleDoubleClick:function(event){
+            this.setState({value:++this.state.value});
+          },
+          render:function(){
+            var value = this.state.value;
+            return <div>
+                  <button onClick={this.handleChange} >单击</button>
+                  <button onDoubleClick = {this.handleDoubleClick}>双击</button>
+                  <h2>{value}</h2>
+              </div>
+          }
+        });
+
+        ReactDOM.render(
+          <HelloMessage />,
+          document.querySelector('#hello')
+        )
+
+
+
+      </script>
+   </div>
+
+  </body>
+</html>

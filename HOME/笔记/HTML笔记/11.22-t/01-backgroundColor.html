@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>背景颜色的设置</title>
+    <style>
+
+       body {
+         height: 2000px;
+       }
+
+      .f {
+        width: 500px;
+        height: 200px;
+        background-color: red;
+        background-color: #330066;
+        background-color: rgb(19, 80, 125);
+      }
+
+      .f1 {
+        width: 600px;
+        height: 400px;
+
+        /*background-color: red;*/
+
+        /*默认情况下， 背景图片需要x,y 平铺*/
+        /*background-image: url("./image/bg1.png");*/
+
+        /* 背景图片宽高大于元素，那么就会从图片的左上角开始显示，直到铺满整个元素*/
+        /*background-image: url("./image/guangtou.jpg");*/
+
+
+        /*background-image: url("./image/pig.jpg");*/
+        /*background-repeat: no-repeat;*/
+        /*background-repeat: repeat-x;*/
+        /*background-repeat: repeat-y;*/
+        /*background-repeat: repeat;*/
+
+
+        /* 右下角显示*/
+        /*当使用英文单词进行设置的时候，顺序随便*/
+        /*background-position: right bottom;*/
+        /*background-position: center center;*/
+        /*background-position: left center;*/
+        /*background-position: right center;*/
+        /*background-position: top center;*/
+        /*background-position: center  bottom ;*/
+
+
+
+        /*使用坐标设置, 参数位置固定，x,y, 单位是px*/
+        /*background-position:  20px  20px;*/
+
+        /*固定，但是是相对于屏幕固定的，不是其他元素!!!!!!!!!!*/
+        /*background-attachment: fixed;*/
+
+
+         /*综合写法*/
+         background: red url("./image/pig.jpg")  no-repeat 10px 20px;
+
+
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class='f'>
+      div元素
+    </div>
+
+    <div class="f1"></div>
+
+  </body>
+</html>

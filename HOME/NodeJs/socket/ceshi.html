@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>聊天室</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+  </head>
+  <body>
+
+    <ul id="messages"></ul>
+    <div id="join">
+
+    </div>
+    <form class="" action="">
+      <input id="m" autocomplete="off">
+      <input id="n" type="text" name="name" value="神之右手">
+
+      <button>Send</button>
+    </form>
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/socket.io/1.7.3/socket.io.slim.js"></script>
+
+    <script>
+    $(function(){
+      var socket = io();
+      var user = '';
+      var sendTo = "";
+      var data = "";
+      $("#messages").on("click",'li>p',function(){
+        sendTo = $(this).attr("k");
+        console.log(sendTo);
+      });
+      $('form').submit(function(){
+        if(sendTo == ""){
+          data = {msg: '<p k="'+user+'">' + $('#m').val() + '</p>',name:$('#name').val()};
+        }else{
+          data = {msg: '<p k="'+user+'">' + $('#m').val() + '</p>',sendTo:sendTo,name:$('#name').val()};
+        }
+        socket.emit('chat message', data, function(data, err){
+          console.log(data);
+          console.log(err);
+          setTimeout(function(){
+            $('li:last-child').append('<i class="fa fa-check" aria-hidden="true"></i>');
+            return false;
+          }, 1000);
+
+       });
+        $('#m').val('');
+        return false;
+      });
+      socket.on('setName',function(data){
+        user = data;
+        console.log(user);
+      })
+      socket.on('mes', function(msg){
+        $('#messages').append($('<li>').html(msg.msg + '-----' +$('#n').val()));
+        $('#messages li:last-child').append($('<button id="del">删除</button>'));
+
+        $('#del').click(function(){
+          $(this).parent().css('display','none');
+        })
+      });
+
+      socket.on('broadcast', function(msg){
+        console.log('broadcast!');
+        $('#join').html('<p><strong>Welcome to new friend.</strong></p>');
+      });
+      });
+    </script>
+  </body>
+</html>

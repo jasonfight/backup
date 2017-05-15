@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>块级元素高度</title>
+    <style>
+      * {
+        margin: 0;
+      }
+
+      .f {
+        width: 1000px ;
+        height: 100px ;
+      }
+
+      .f p {
+        height: 30px;
+      }
+
+      span {
+        width: 500px;
+        height: 500px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class='f'>
+
+      <!-- 块级元素的宽度默认和父元素一致，但是高度是不能继承的  -->
+      <p>div中的p元素</p>
+      <p>div中的p元素</p>
+    </div>
+
+    <p>的空间广阔的世界观</p>
+
+    <!-- 默认情况下，行内元素无法设置宽高  -->
+    <span>行内元素，span元素</span>
+
+
+
+  </body>
+</html>

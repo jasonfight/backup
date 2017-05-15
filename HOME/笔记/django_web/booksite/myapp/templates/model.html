@@ -1,0 +1,21 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title></title>
+    </head>
+    <body>
+      <h1>NI HAO</h1>
+      {% for b in book %}
+      <p>1 {{b.title}} </p>
+      <p>2 {{b.publication_date}} </p>
+      {% endfor %}
+
+      {% for name in a %}
+      <p>3 {{name.name}} </p>
+      {% endfor %}
+
+      <p> 4 {{b.first_name}} </p>
+      <p> 5 {{c}} </p>
+    </body>
+  </html>

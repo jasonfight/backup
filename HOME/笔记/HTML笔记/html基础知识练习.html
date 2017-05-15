@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>table标签</title>
+  </head>
+  <body>
+    <p>      p 标签  段落标签  自成一段,自动换行   </p>
+    <hr>
+    <p>       hr标签   水平线标签, 画出横跨屏幕的一条横线   </p>
+    <p> br 标签   换行标签  </p>
+    <img src="./1.jpg" alt="无法显示图片"title="123" width="30" /> 图片标签  <br>
+    <a href="#" target="self"> a标签  超级链接标签 target 属性可以为  self  或者  blank </a> <br>
+    <a href="1">锚点链接1</a>
+    <p id="1"></p>
+    <strong>  strong标签  强调标签 也可以用 b标签</strong> <br>
+    <ins>ins标签  下划线标签,也可以用u标签</ins> <br>
+    <em>em标签 斜体标签  也可用i标签</em> <br>
+    <del>del标签 删除线标签 也可以用 s 标签</del> <br>
+    <h1>h1 标签   标题1 </h1> <br>
+    <h2>h2 标签   标题2 </h2> <br>
+    <h3>h3 标签   标题3 </h3> <br>
+    <h4>h4 标签   标题4 </h4> <br>
+    <h5>h5 标签   标题5 </h5> <br>
+    <h6>h6 标签   标题6 </h6> <br>
+    <p>
+      特殊标签:  &nbsp 空格   &gt  大于号   &lt 小于号    &amp 和符号
+       &yen 人迷你    &copy 版权符号    &deg 度   &plusmn 正负号
+       &times 乘号  &divide  除号  &sup2  平方  &sup3 立方
+    </p>
+
+<ol>
+  <li>有序列表1</li>
+  <li>有序列表2</li>
+</ol>
+<ul>
+<li>无序列表1</li>
+<li>无序列表2</li>
+</ul>
+<dl>
+
+  <dt>自定义1</dt>
+  <dd>自定义1.1</dd>
+  <dd>自定义1.2</dd>
+  <dt>自定义2</dt>
+  <dd>自定义2,1</dd>
+  <dd>自定义2.2</dd>
+</dl>
+
+    <br>
+
+
+
+    <table border="1" cellspacing="0" width='500' height="200" align='left' cellpadding='4' >
+      <caption><strong>学生入学信息</strong></caption>
+      <tr align='center'>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>班级</th>
+      </tr>
+      <tr align='center'>
+        <td>第1行第1列</td>
+        <td>第1行第2列</td>
+        <td>第1行第3列</td>
+        <td>第1行第4列</td>
+      </tr>
+      <tr align='center'>
+        <td>第2行第1列</td>
+        <td>第2行第2列</td>
+
+        <!-- colspan 用于跨列  -->
+        <td colspan="2">
+          独占2列
+        </td>
+      </tr>
+
+      <tr align='center'>
+        <td>第3行第1列</td>
+        <td>第3行第2列</td>
+        <td>第3行第3列</td>
+        <!-- rowspan 用于跨行  -->
+        <td rowspan='2'>
+          第3行第4列
+        </td>
+      </tr>
+
+      <tr align='center'>
+        <td>第4行第1列</td>
+        <td>第4行第2列</td>
+        <td>第4行第3列</td>
+      </tr>
+      <tfoot align=center>
+        <tr>
+          <td> 1  </td>
+          <td> 1  </td>
+          <td> 1  </td>
+          <td>  1 </td>
+        </tr>
+      </tfoot>
+    </table>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+<form class="" action="#" method="get">
+
+  姓名:<input type="text" name="text" value="请输入内容"> <br>
+  密码:<input type="password" name="passwd" value="111111"maxlength="6"><br>
+  <input type="checkbox" name="checkbox1">选项一
+  <input type="checkbox" name="checkbox2" checked="">选项二<br>
+  <input type="radio" name="gender" value="1">male
+  <input type="radio" name="gender" value="2">female <br>
+  <input type="button" name="button" value="普通按钮">
+  <input type="button" name="button2" value="禁止" disabled>
+  <input type="submit" name="submit" value="提交">
+  <input type="reset" name="reset" value="重置">
+  <input type="image" src="./1.jpg" width="20" alt="无法显示图片" title="123" ><br>
+  <textarea name="文本框" rows="8" cols="40" >123</textarea>
+</form>
+<fieldset width="100">
+  <legend>表单</legend>
+  <form  action="#" method="get">
+      <input type="radio" name="radio1" value="">选项1 <br>
+      <select size="2" name="select"  multiple >
+          <option>选项1</option>
+          <option>选项2</option selected>
+          <option>选项3</option>
+          <option>选项4</option>
+      </select>
+  </form>
+</fieldset>
+  </body>
+</html>

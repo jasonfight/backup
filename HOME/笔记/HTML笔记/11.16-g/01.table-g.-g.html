@@ -1,0 +1,83 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>table  表格</title>
+    </head>
+    <body>
+
+            <!--border 表格边框宽度，默认为0，
+            cellspacing 单元格之间距离，默认为1，
+            width 整个表格的宽度
+            height 整个表格的高度
+            align  对齐方式有 center left  right 三种参数，
+            cellpadding 表格内容与表格的左右距离 -->
+        <table border="1" cellspacing="0" width="400" height="300" align="center" cellpadding="4">
+
+            <!-- 表头  用来表示表格的标题 -->
+          <caption><strong>学生入学信息</strong></caption>
+          <!-- 表格主体，默认为添加，不用管 -->
+
+            <!-- 表格头部，为表格添加首行，用来优化网页，平时可以不用 -->
+            <thead>   </thead>
+            <!-- 表格主题，默认添加，编程时，可不写 -->
+          <tbody>
+123
+          <!-- 第一行
+            th  表示题目 字体加粗 -->
+          <tr align="center">
+            <th>  姓名  </th>
+            <th>  年龄  </th>
+            <th>  性别  </th>
+            <th>  班级  </th>
+          </tr>
+
+
+          <!-- 第二行 -->
+          <tr align="center">
+            <td> 学生1  </td>
+            <td> 年龄1  </td>
+            <td> 性别1  </td>
+            <!-- rowspan标签  跨行标签，向下跨n行 -->
+            <td rowspan="4">  一班   </td>
+          </tr>
+
+
+          <!--  第三行-->
+          <tr align="center">
+            <td> 学生2  </td>
+            <td> 年龄2  </td>
+            <td> 性别2  </td>
+          </tr>
+
+
+          <!-- 第四行 -->
+          <tr align="center">
+            <td> 学生3 </td>
+            <td> 年龄3 </td>
+            <td> 性别3 </td>
+          </tr>
+
+
+          <!-- 第五行 -->
+          <tr align="center">
+            <td> 学生4  </td>
+            <td> 年龄4  </td>
+            <td> 性别4  </td>
+
+
+          <!-- 第六行 -->
+          </tr>
+          <tr align="center">
+            <td> 备注 </td>
+            <!-- colspan 跨列标签，跨n行 -->
+            <td colspan="4" align="center"> 都是好孩子  </td>
+          </tr>
+
+        </tbody>
+          <!-- 表尾，为表格的最后一样，可用与网页优化，平时可以不使用 -->
+          <tfoot> </tfoot>
+
+  </table>
+    </body>
+  </html>

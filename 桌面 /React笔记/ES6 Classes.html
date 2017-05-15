@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ES6 Classes</title>
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div class="hello">
+      <script type="text/babel">
+          class Div extends React.Component{
+            constructor(props){
+              super(props);
+              this.state = {count:props.initialCount};
+            }
+            tick(){
+              this.setState({count:this.state.count+1});
+            }
+            render(){
+              return(
+                <div onClick={this.tick.bind(this)}>
+                  click:{this.state.count}
+                </div>
+              )
+            }
+          }
+          Div.propType = {initialCount:React.PropTypes.number};
+          
+          ReactDOM.render(
+            <Div  ></Div>,
+            document.body
+          )
+      </script>
+   </div>
+
+  </body>
+</html>

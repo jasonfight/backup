@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>文本相关属性</title>
+    <style>
+      p {
+        /*直接填写英文单词*/
+        /*color: red;*/
+
+        /*使用十六进制表示*/
+        /*
+        R: 0-255  00-ff
+        G: 0-255
+        B: 0-255
+        */
+        /*color: #CD6839;*/
+
+        /*直接使用rgb*/
+        color: rgb(10,100,50);
+
+        font-size: 20px;
+        text-decoration: overline;underline;
+      }
+
+      span {
+        font-size: 30px;
+        letter-spacing: 1px;
+
+        /*span元素属于行内元素，无法直接设置行高，没有效果*/
+        /*line-height: 60px;*/
+      }
+
+      div {
+        /*word-spacing: 10px;*/
+        word-spacing:inherit;;
+        line-height:  20px;
+      }
+
+      h3 {
+        line-height: 50px;
+      }
+
+      h1 {
+        /*text-decoration: line-through overline underline;*/
+        text-decoration: none;
+        text-align: center;
+
+      }
+
+      a {
+        text-decoration: none;
+        color: #a3dd44;
+      }
+
+
+      .p-align {
+        /*text-align: right;*/
+        /*text-align: center;*/
+        text-align: left ;
+      }
+    </style>
+  </head>
+  <body>
+
+    <p>设置颜色</p>
+    <span>欢迎来到人才基地！</span>
+    <div>
+      hello world google apple android abc  <br>
+      hello world google apple android abc  <br>
+    </div>
+    <h3>设置行高</h3>
+
+   <h1>设置各种线</h1>
+
+   <a href="#">点击跳转</a><br>
+
+   <p class="p-align">设置文本水平对齐</p>
+   <span>nishigedaahabi</span>
+
+  </body>
+</html>

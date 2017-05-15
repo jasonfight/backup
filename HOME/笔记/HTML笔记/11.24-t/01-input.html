@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>input</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      input {
+        width: 300px;
+        height: 50px;
+        font-size: 30px;
+
+        /*去掉掉input获得焦点的外部边框样式*/
+        outline-style: none;
+
+        /*去掉默认的边框*/
+        /*border: none;*/
+        padding-left: 10px;
+      }
+
+      button {
+        width: 80px;
+        height: 40px;
+        border: none;
+        /*outline-style: none;*/
+
+        /*设置鼠标放上去的效果*/
+        cursor:pointer;
+      }
+
+
+      .item {
+        border: 1px solid gray;
+        padding: 10px;
+      }
+
+      .item h3 {
+        color: green;
+        background: url("....jpg") no-repeat left center;
+      }
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+
+     <!-- input属于行元素，但是可以设置宽高  -->
+    <input type="text">
+    <input type="text">
+
+    <input type="button" value="按钮">
+
+
+     <!-- button 属于行元素，但是可以设置宽高  -->
+    <button>按钮</button>
+
+
+
+
+    <div class="head">
+        <div class="head-content">
+        <div class="head-content-top">
+            <div class="head-content-top-logo"></div>
+            <input type="text">
+          </div>
+          <div class="head-content-bottom">
+            <ul><li></li></ul>
+          </div>
+        </div>
+    </div>
+
+
+  </body>
+</html>

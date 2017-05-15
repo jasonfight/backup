@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>更改状态</title>
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div class="hello">
+      <script type="text/babel">
+        var Div = React.createClass({
+          getInitialState:function(){
+            return {liked:false};
+          },
+          MyClick:function(event){
+            this.setState({liked:!this.state.liked});
+          },
+          render:function(){
+            var text = this.state.liked?'like':'have not like';
+            return <h1 onClick = {this.MyClick}>{text}</h1>
+          }
+        });
+
+        ReactDOM.render(
+          <Div />,
+          document.querySelector('.hello')
+        )
+      </script>
+   </div>
+
+  </body>
+</html>

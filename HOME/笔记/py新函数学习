@@ -1,0 +1,22 @@
+一.随机数的使用
+第一步:引入random模块
+第二步:模块的使用:
+1.random.random:产生0-1之间的随机数
+2.random.uniform(a,b): 产生a到b中的随机小数,
+3.random.randint(a,b):产生a到b中的随机整数,
+4.random.randrange(a,b,c):产生a到b中,以c为步长的随机数.
+5.random.choice('nihao'):产生'nihao'字符串中的任意一个字母.
+6.random.choice(['nihao','hello']):产生'nihao'或者'hello'的任意一个字符串,也可以为元组.
+7.random.sample([1,2,3,4],2):从列表中取出任意两个数字,进行输出.
+
+strip()函数:
+语法:
+s.strip(rm)  s 为需要操作的字符串, rm为要删除的字符序列. 如果括号中不写内容,默认删除空白符（包括'\n', '\r',  '\t',  ' ')
+功能:
+该函数的作用为将字符串的开头和结尾处的符合rm的字符删除,输出未删除的部分, 该函数并不改变原先内容,仅仅是输出相应的内容. 
+
+举例:
+'123abc'.strip('321') --> 'abc'	321 的顺序不管如何 都会去掉
+衍生:
+s.lstrip(rm)	删除字符串开头部分符合rm序列的字符
+s.rstrip(rm)	删除字符串结尾部分符合rm序列的字符

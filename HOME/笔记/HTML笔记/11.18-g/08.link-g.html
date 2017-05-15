@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>伪类</title>
+    <style >
+      /*link.没有采取任何操作前的样式*/
+      a:link{
+        color: red;
+      }
+      /*visited.单击过后的样式*/
+      a:visited{
+        color: green;
+      }
+      /*hover,鼠标指针悬停时的样式*/
+      a:hover{
+        color: blue;
+      }
+      /*acctive，点击时的样式，*/
+      a:active{
+        color: black;
+      }
+      /*伪类标签的顺序 为 link  visited hover active
+      顺序不能改变,否则可能会出现兼容问题*/
+    </style>
+
+  </head>
+  <body>
+        <a href="http://www.baidu.com">跳转到百度</a>
+  </body>
+</html>

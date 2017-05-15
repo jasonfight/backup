@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UPDATE</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    input,i{
+      display: none
+    }
+
+  </style>
+  </head>
+  <body>
+
+
+  <ul>
+    <form action="/update" method="post">
+    <li id = 'post-1'>姓名:
+      <span> <%= data.name %> </span>
+       <input type="text" name="name"value=<%= data.name %> >
+     </li>
+
+    <li id = 'post-2'>性别:
+      <span> <%= data.gender %> </span>
+      <input type="radio" name="gender" value="male"> <i>男</i>
+      <input type="radio" name="gender" value="female"> <i>女</i>
+  </li>
+
+    <li id = 'post-3'>年龄:
+      <span> <%= data.age %> </span>
+      <input type="number"  name="age" min=1 max=100 value=<%= data.age %> />
+    </li>
+    <li id = 'post-4'>email:
+      <span> <%= data.email %> </span>
+      <input type="email" name="email" value=<%= data.email %> >
+    </li>
+    <li id = 'post-5' >出生日期:
+       <span> <%= data.birthday %> </span>
+      <input type="date" name="birthday" value=<%= data.birthday %> >
+     </li>
+     <button type="submmit"> 更新</button>
+   </form>
+  </ul>
+  <script>
+      $('ul').click(function(e){
+        if(e.target &&  e.target.nodeName.toUpperCase() == 'LI'){
+          $(e.target).children('span').css({display:'none'});
+          $(e.target).children('input,i').css({display:'block'})
+  }
+      })
+
+
+
+
+  </script>
+
+  </body>
+</html>

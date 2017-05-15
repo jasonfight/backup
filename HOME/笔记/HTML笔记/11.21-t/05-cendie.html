@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css的层叠</title>
+    <style>
+      .f {
+        font-size: 40px;
+        font-weight: 800;
+      }
+
+      .f1 {
+        color: red;
+      }
+
+      p {
+        color: green ;
+      }
+
+      p {
+        /*针对重复性的设置，那么后边的设置回覆盖掉之前的设置*/
+        /*color: yellow;*/
+        font-size: 40px;
+      }
+
+      p {
+        font-style: italic;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="f f1">
+      div 元素
+    </div>
+
+    <p>p元素</p>
+
+  </body>
+</html>

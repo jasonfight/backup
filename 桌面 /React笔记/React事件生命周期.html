@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <!-- <script src="https://cdn.bootcss.com/react/15.5.4/react.min.js"></script> -->
+    <!-- <script src="../../cdn/react.min.js"></script> -->
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <!-- <script src="https://cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script> -->
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/babel-core/5.8.5/browser.min.js"></script> -->
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div id="hello">
+      <script type="text/babel">
+          var FormInput = React.createClass({
+                getInitialState:function(){
+                  return {n:null,number:0}
+                },
+                componentWillMount:function(){
+                  this.state.n = 'componentWillMount';
+                },
+                componentDidMount:function(){
+                    setTimeout(()=>{
+                      this.setState({number:this.state.number +1})
+                    },1000);
+                },
+                componentWillUpdate:function(){
+                  console.log('component   WillUpdate.....')
+                },
+                componentDidUpdate(){
+                  console.log('component   DidUpdate....')
+                },
+                submitHandler:function(event){
+                  event.preventDefault();
+                  console.log(this.refs.name.value);
+                  console.log(this.refs.passwd.value);
+                  this.setState({n:this.refs.name.value});
+                },
+                render:function(){
+                  return (<div>
+                          <label htmlfor = "name">name</label>
+                          <input type="text" ref = "name" id = "name"/>
+                          <br/>
+                          <label htmlFor="passwd">passwd</label>
+                          <input type="text" ref = "passwd" id ="passwd"/>
+                          <br/>
+                          <button onClick = {this.submitHandler}> 提交</button>
+                          <h1>{this.state.n}</h1>
+                          <br/>
+                          <h1>num:{this.state.number}</h1>
+                    </div>)
+                }
+          });
+
+
+
+          ReactDOM.render(<FormInput />,document.body)
+
+
+      </script>
+   </div>
+
+  </body>
+</html>

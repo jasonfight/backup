@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>新闻导航</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .box {
+        width: 240px;
+        height: 310px;
+        background: url("./image/bg.gif");
+        margin: 0 auto;
+
+        /*在同一个选择器内部， 多次设置同一个属性， 最后一次设置有效*/
+        margin-top: 50px;
+        padding: 10px;
+      }
+
+      .box h3 {
+        /*默认情况下，块元素的总宽度是继承父元素的width值*/
+
+        /*
+        手动设置width时，那么子元素的总体宽度就会随着自身border,padding而变化
+        width: 240px;
+        */
+        color: #fff;
+        border-left: 4px solid  #c9e143;
+        padding-left: 4px;
+      }
+
+      .box ul {
+        margin-top: 8px;
+        background: white;
+        font-size: 13px;
+        padding: 2px 10px;
+      }
+
+      .box ul li {
+        height: 33px;
+        line-height: 33px;
+        border-bottom: 1px dashed gray;
+        background: url("./image/tb.gif") no-repeat left center;
+        /*padding-left: 12px;*/
+
+        /*使用首行缩进，也可以实现文本移动*/
+        text-indent: 1em;
+      }
+
+      .box ul li a:hover {
+        text-decoration: underline;
+        color: red;
+      }
+
+      .box ul li a {
+        /*margin-left: 12px;*/
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="box">
+      <h3>爱宠知识</h3>
+      <ul>
+        <li><a href="#">养狗比养猫对健康更有利</a></li>
+        <li><a href="#">养狗比养猫对健康更有利</a></li>
+        <li><a href="#">日本正宗柴犬亮相，你怎么看柴犬</a></li>
+        <li><a href="#">日本正宗柴犬亮相，你怎么看柴犬</a></li>
+        <li><a href="#">日本正宗柴犬亮相，你怎么看柴犬</a></li>
+        <li><a href="#">日本正宗柴犬亮相，你怎么看柴犬</a></li>
+        <li><a href="#">日本正宗柴犬亮相，你怎么看柴犬</a></li>
+        <li><a href="#">日本正宗柴犬亮相，你怎么看柴犬</a></li>
+      </ul>
+    </div>
+
+
+    <!-- text-indent 默认情况下，在a元素上没有效果  -->
+    <!-- <a href="#" style="text-indent: 2em;">款上缴国库是价格快速点击观看过</a> -->
+
+  </body>
+</html>

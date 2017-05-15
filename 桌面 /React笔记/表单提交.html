@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <!-- <script src="https://cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script> -->
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/babel-core/5.8.5/browser.min.js"></script> -->
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+
+  <title>表单提交</title>
+</head>
+<body>
+  <script type="text/babel">
+    var Form = React.createClass({
+      getInitialState:function(){
+        return {
+          username:null,
+          password:null
+        }
+      },
+      Submit:function(event){
+        event.preventDefault();
+        var username = ReactDOM.findDOMNode(this.refs.username).value;
+        var password = ReactDOM.findDOMNode(this.refs.password).value;
+        this.setState({username:username,password:password});
+      },
+      render:function(){
+        return <form  onSubmit = {this.Submit}>
+          <input type="text" ref="username" defaultValue = 'username'/>
+          <br/><br/>
+          <input type="password" ref="password"/>
+          <br/><br/>
+          <button type="submit"> 提交</button>
+          <h1>{this.state.username}</h1>
+          <h1>{this.state.password}</h1>
+        </form>
+      }
+    })
+    ReactDOM.render(
+      <Form /> ,document.body
+    )
+
+
+
+  </script>
+</body>
+</html>

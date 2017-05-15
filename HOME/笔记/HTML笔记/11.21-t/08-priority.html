@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css的优先级问题</title>
+    <style>
+
+      div {
+        color: red;
+        font-size: 50px;
+      }
+
+      /*
+     当优先级一致时，那么最后设置的有效
+      div {
+        color: green;
+      }*/
+
+      .f {
+        color: green;
+      }
+
+      #div-id {
+        color: pink;
+      }
+
+
+      p {
+        color: blue;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <!-- 在同一个元素上设置的属性当中， 行内样式的设置最终有效  -->
+    <div id="div-id" class="f" style="color: purple;">
+      div元素
+      <p>div中的p元素</p>
+    </div>
+
+  </body>
+</html>

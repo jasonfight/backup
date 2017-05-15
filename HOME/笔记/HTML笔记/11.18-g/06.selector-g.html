@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>交集选择器</title>
+      <style media="screen">
+        /*两个条件必须都满足时才起作用*/
+        /*p元素内必须包含p2和p2两个类才可以起作用*/
+        div p.p2.p3{
+          color: red;
+        }
+      </style>
+
+  </head>
+  <body>
+
+    <div >
+      <p> div--->p  没有类 属性  默认属性 </p>
+        <!-- class可以有多个值，每个值以空格作为分割符号 -->
+      <p class="p2 p3">
+          div--->p.p2.p3
+          符合  div--->p.p2.p3  颜色为红色
+      </p>
+      <p class="p2">
+          div--->p2
+          只符合div--->p.p2  不符合  div--->p.p2.p3 颜色为默认
+      </p>
+      <p class="p3">
+          div--->p3
+          只符合div--->p.p3  不符合  div--->p.p2.p3 颜色为默认
+      </p>
+
+    </div>
+
+    <!-- 备注：p元素中不能嵌套p元素，行内元素不能嵌套块元素 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

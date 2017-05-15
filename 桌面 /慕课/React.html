@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React组件生命周期</title>
+  <script src="/home/jason/cdn/react.min.js"></script>
+  <script src="/home/jason/cdn/react-dom.min.js"></script>
+  <script src="/home/jason/cdn/browser.min.js"></script>
+  <script src = "/home/jason/cdn/jquery.js"></script>
+</head>
+<body>
+  <script type="text/babel">
+    var Div = React.createClass({
+      getInitialState(){
+        console.log('1:init');
+        return {opacity:0.5,fontSize:'30px'
+        }
+      },
+      componentWillMount(){
+        console.log('2:will mount')
+      },
+      componentDidMount(){
+        console.log('3. did  mount');
+
+        setTimeout(function(){
+          this.setState({
+            opacity:1.0
+          })
+        }.bind(this),1000)
+      },
+        render(){
+          return(
+            <div style = {this.state}>
+              Hello {this.props.name}
+            </div>
+          )
+        }
+    });
+    ReactDOM.render(
+      <Div name="jason"></Div>,document.body
+    )
+
+
+  </script>
+</body>
+</html>

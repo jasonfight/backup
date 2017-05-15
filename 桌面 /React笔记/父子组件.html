@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>父子组件</title>
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div class="hello">
+      <script type="text/babel">
+      var Son = React.createClass({
+        render:function(){
+          return <div style={{
+            width:'1000px',
+              height:'1000px',
+              background:'gray',
+              margin:'0px 0px'
+          }} onMouseMove={this.props.hello}>
+                <h4>X:{this.props.X}</h4>
+                <h4>Y:{this.props.Y}</h4>
+
+          </div>
+        }
+      });
+      var Dad = React.createClass({
+          getInitialState:function(){
+            return {
+                    x:0,
+                    y:0
+              };
+          },
+          handleChange:function(event){
+            this.setState({x:event.clientX,
+                            y:event.clientY
+                          });
+          },
+          render:function(){
+            var x=this.state.x;
+            var y = this.state.y;
+            return <div>
+            <Son style={{
+              width:'1000px',
+              height:'1000px',
+              background:'gray',
+              margin:'0px 0px'
+            }} hello={this.handleChange} X={x} Y = {y}>
+            </Son>
+            </div>
+          }
+        });
+
+        ReactDOM.render(
+          <Dad />,
+          document.querySelector('body')
+        )
+      </script>
+   </div>
+
+  </body>
+</html>

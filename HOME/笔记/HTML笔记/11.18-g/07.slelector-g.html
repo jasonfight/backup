@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>并集选择器</title>
+
+    <style >
+
+    /*div--->p  或者 div---> span  或者 h2--->span都可以
+    中间使用都好作为分隔符*/
+    div p,
+    p span,
+    h2 span{
+      color:green;
+      font-size:20px;
+    }
+    </style>
+
+  </head>
+  <body>
+    <div >
+      <p>
+          div--->p  符合  div--->p 颜色为绿色
+      </p>
+    </div>
+      <p>
+        <span>  p--->span 符合p--->span 颜色为绿色  </span>
+      </p>
+      <h2>
+        <span>  h2--->span  符合h2--->span 颜色为绿色</span>
+      </h2>
+  </body>
+</html>

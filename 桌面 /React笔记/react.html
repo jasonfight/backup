@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <!-- <script src="https://cdn.bootcss.com/react/15.5.4/react.min.js"></script> -->
+    <!-- <script src="../../cdn/react.min.js"></script> -->
+    <script src="/home/jason/cdn/react.min.js"></script>
+
+    <!-- <script src="https://cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script> -->
+    <script src="/home/jason/cdn/react-dom.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/babel-core/5.8.5/browser.min.js"></script> -->
+    <script src="/home/jason/cdn/browser.min.js"></script>
+
+  </head>
+  <body>
+    <div id="hello">
+      <script type="text/babel">
+
+      //切换:
+        // var HelloMessage = React.createClass({
+        //   getInitialState:function(){
+        //     return { value:false};
+        //   },
+        //   handleChange:function(event){
+        //     this.setState({value:!this.state.value})
+        //   },
+        //   render:function(){
+        //     var value = this.state.value?'hello':'你好';
+        //     return <div>
+        //           <button onClick={this.handleChange}>按钮</button>
+        //           <h2>{value}</h2>
+        //       </div>
+        //   }
+        // });
+
+
+
+        //单击一次加一
+        // var HelloMessage = React.createClass({
+        //   getInitialState:function(){
+        //     return {value:0};
+        //   },
+        //   handleChange:function(event){
+        //     this.setState({value:++this.state.value})
+        //     console.log(this.state.value);
+        //   },
+        //   render:function(){
+        //     var value = this.state.value;
+        //     return <div>
+        //           <button onClick={this.handleChange}>按钮</button>
+        //           <h2>{value}</h2>
+        //       </div>
+        //   }
+        // });
+        //
+        // ReactDOM.render(
+        //   <HelloMessage />,
+        //   document.querySelector('#hello')
+        // )
+
+        //鼠标移动事件
+        // var  Move = React.createClass({
+        //   getInitialState:function(){
+        //     return {
+        //       x:0,
+        //       y:0
+        //     };
+        //   },
+        //   handleMouseMove:function(event){
+        //     this.setState({
+        //       x:event.clientX,
+        //       y:event.clientY
+        //     });
+        //   },
+        //   render:function(){
+        //     return <div style={{
+        //         width: '1000px',
+        //         height: '700px',
+        //         background:'gray',
+        //         color:'white'
+        //     }} onMouseMove={this.handleMouseMove}>
+        //       <h1> {this.state.x+','+this.state.y} </h1>
+        //      </div>
+        //   }
+        // });
+        // ReactDOM.render(
+        //   <Move></Move>,
+        //   document.body
+        // );
+
+          // NOTE: 单击事件(有问题,需要更改)
+        // var Click = React.createClass({
+        //   render:function(){
+        //     return
+        //     <div>
+        //     <h1>123</h1>
+        //     </div>
+        //   }
+        // });
+        //
+        // ReactDOM.render(
+        //   <Click> </Click>,document.querySelector('#hello')
+        // );
+
+
+        //  父子组件
+        // var Son = React.createClass({
+        //   render:function(){
+        //     return <div>
+        //           <button onDoubleClick = {this.props.hehe}> 按钮 </button>
+        //             <h1>{this.props.dadsay}  </h1>
+        //           </div>
+        //   }
+        // });
+        // var Dad = React.createClass({
+        //   getInitialState:function(){
+        //     return {value:'hello son.....'}
+        //   },
+        //   Change:function(event){
+        //     this.setState({value:'hello daddy.....'})
+        //   },
+        //   render:function(){
+        //     var value = this.state.value;
+        //     return <div>
+        //             <Son dadsay = {value} hehe={this.Change}></Son>
+        //            </div>;
+        //   }
+        // });
+        //
+        // ReactDOM.render(
+        //   <Dad />,document.querySelector('#hello')
+        // );
+        // NOTE: 表单提价
+        // var Form = React.createClass({
+        //    submithandler: function(event){
+        //     event.preventDefault();
+        //     var helloTo = ReactDOM.findDOMNode(this.refs.hello).value;
+        //     alert(helloTo);
+        // },
+        //   render:function(){
+        //     return <form onSubmit = {this.submithandler}>
+        //     <input type="text" ref="hello" defaultValue="nihao" />
+        //     <br />
+        //     <button type ="submit"> 提交</button>
+        //     </form>
+        //   }
+        // });
+        // ReactDOM.render(<Form></Form>,document.body);
+
+        //输出表单信息
+        var Form = React.createClass({
+          getInitialState(){
+            return{user:null,password:null}
+          },
+           submithandler(event){
+              event.preventDefault();
+              var user = ReactDOM.findDOMNode(this.refs.user).value;
+              var password = ReactDOM.findDOMNode(this.refs.password).value;
+              this.setState({user:user,password:password});
+        },
+          render:function(){
+            return (<form onSubmit = {this.submithandler}>
+            <input type="text" ref="user" defaultValue="nihao" />
+            <input type="password" ref="password"  />
+            <br />
+            <button type ="submit"> 提交</button>
+            <h1> {this.state.user} </h1>
+            <h1> {this.state.password} </h1>
+            </form>)
+          }
+        });
+        ReactDOM.render(<Form></Form>,document.body);
+
+
+
+      </script>
+   </div>
+
+  </body>
+</html>

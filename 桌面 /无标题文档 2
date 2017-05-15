@@ -1,0 +1,14 @@
+1. sudo apt-get install -y build-essential  编译用
+
+2. 安装node
+
+
+安装  Yarn 
+
+sudo npm  install -g yarn react-native-cli
+
+
+安装JDK
+
+
+

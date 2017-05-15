@@ -1,0 +1,49 @@
+#!/usr/bin/python
+#coding=utf-8
+from dc import *
+
+print "dc算法的实现:"
+print ""
+
+
+s=Stack()
+s.initstack([])
+
+a=raw_input('请输入dc计算式:')
+for i in a:
+    s.head_append(i)
+    if i in ['+','-','*',"/"]:
+        if i == "+":
+            result = int(s[1]) + int(s[2])
+        elif  i == "-"6:
+            result = int(s[1]) - int(s[2])
+        elif i == "*":
+            result = int(s[1]) * int(s[2])
+        elif i == "/":
+            result = int(s[1]) / int(s[2])
+        s.pop()
+        s.pop()
+        s.pop()
+        s.head_append(result)
+print "结果是:",result
+
+
+
+
+
+
+
+#
+# print "初始栈的值:"
+# s.show()
+#
+# print "栈顶增加一个值为10的结点:"
+# s.head_append(10)
+# s.show()
+#
+# print "栈顶删除一个结点:"
+# s.pop()
+# s.show()
+#
+# print "栈的长度:"
+# print s.getlength()

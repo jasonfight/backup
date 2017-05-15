@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React事件</title>
+  <script src="/home/jason/cdn/react.min.js"></script>
+  <script src="/home/jason/cdn/react-dom.min.js"></script>
+  <script src="/home/jason/cdn/browser.min.js"></script>
+  <script src = "/home/jason/cdn/jquery.js"></script>
+</head>
+<body>
+  <script type="text/babel">
+  var handelClick=React.createClass({
+    render(){
+      return(
+        <div>
+        <button>显示|隐藏</button>
+        <span>测试点击</span>
+        </div>
+      )
+    }
+  });
+    var Div = React.createClass({
+      getInitialState(){
+        return {
+          input:''
+        }
+      },
+        render(){
+          return(
+            <div style = {this.state}>
+              <h1> Hello {this.props.name}</h1>
+              <button> 显示|隐藏</button> <span>测试点击</span>
+            </div>
+          )
+        }
+    });
+    ReactDOM.render(
+      <Div name="jason"></Div>,document.body
+    )
+
+
+  </script>
+</body>
+</html>

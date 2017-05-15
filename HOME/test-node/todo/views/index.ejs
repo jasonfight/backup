@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <style media="screen">
+    .release_box{
+      width:600px;
+      height: 400px;
+      border:1px solid black;
+      margin-top:10px;
+    }
+  </style>
+  <body>
+
+    <!-- 表单内容 -->
+    <form class="form" action="/" method="post">
+      标题:<input type="text" name="title" value=""> <br><br>
+      <p>正文:</p>
+      <textarea name="text" rows="8" cols="80"></textarea><br>
+      <button  class="submit"type="submit" name="button">提交</button>
+    </form>
+
+    <div class="release_box">
+      <% info.forEach(function(info){ %>
+          <p><%=info._id%></p>
+          <p><%= info.标题  %></p>
+          <p><%= info.内容 %></p>
+      <% })%>
+    </div>
+    <!-- <script type="text/javascript">
+      var a = $('.submit');
+      a.click(function(){
+        console.log('hahahahahahahh');
+      }) -->
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p><% include header%> </p>
+    <hr>
+    <!-- forEach 的使用 -->
+    <% info.forEach(function(info){ %>
+      <p>  <%= info.name %>  </p>
+    <% }) %>
+    <p><% include footer %></p>
+
+    <hr>
+    <form class="aaa" action="/get" method="get">
+      <input type="text" name="getname" value="">
+      <button type="submit" name="button"> get button</button>
+    </form>
+
+    <hr>
+
+    <form class="bbb" action="/post" method="post">
+      <input type="text" name="name" value="">
+      <button type="submit" name="button">post button</button>
+    </form>
+
+  </body>
+</html>
